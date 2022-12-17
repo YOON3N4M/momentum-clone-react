@@ -1,0 +1,16 @@
+#todoBox {
+  width: 270px;
+  height: 450px;
+  position: absolute;
+  background-color: gray;
+  z-index: 5;
+  top: 35%;
+  left: 80%;
+}
+#todo-btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
