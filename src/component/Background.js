@@ -23,6 +23,7 @@ function Background() {
           <img
             id="background-image"
             src={img[Math.floor(Math.random() * 20)].urls.full}
+            alt="img"
           ></img>
         </div>
       )}

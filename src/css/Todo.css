@@ -2,7 +2,8 @@
   width: 270px;
   height: 450px;
   position: absolute;
-  background-color: gray;
+  background-color: white;
+  border-radius: 5px;
   z-index: 5;
   top: 35%;
   left: 80%;
@@ -13,4 +14,23 @@
   color: white;
   font-size: 20px;
   font-weight: 700;
+}
+
+#todo-header {
+  background-color: red;
+  width: 270px;
+  height: 12%;
+}
+#todo-list {
+  background-color: blue;
+  width: 270px;
+  height: 80%;
+}
+#todo-input-box {
+  background-color: green;
+  width: 270px;
+  height: 8%;
+}
+#todo-input {
+  font-size: 1rem;
 }
