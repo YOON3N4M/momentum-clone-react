@@ -15,7 +15,7 @@ function Background() {
         setLoading(false);
       });
   }, []);
-  console.log(img);
+
   return (
     <div>
       {loading ? null : (

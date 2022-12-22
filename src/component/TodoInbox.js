@@ -1,3 +1,0 @@
-function TodoInbox() {
-  return;
-}
