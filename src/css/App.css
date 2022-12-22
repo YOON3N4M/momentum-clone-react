@@ -107,6 +107,7 @@ section {
 }
 body {
   line-height: 1;
+  text-shadow: 0 1px 5px rgb(0 0 0 / 10%);
 }
 ol,
 ul {
@@ -157,7 +158,7 @@ ul {
 }
 
 .top-left {
-  height: 150px;
+  height: 60px;
   flex-grow: 0;
 }
 .search {
@@ -174,13 +175,13 @@ ul {
   justify-content: flex-start;
   text-align: right;
   min-width: 0;
-  height: 150px;
+  height: 600px;
 }
 .top-left,
 .top-right {
   position: relative;
   display: inline-flex;
-  flex: 1 1;
+  flex: 1 1 auto;
 }
 .center {
   display: flex;
@@ -191,9 +192,15 @@ ul {
   text-align: center;
 }
 
-.center-above,
 .center-below {
-  flex: 1 1 50%;
+  flex: 1.5 1.5 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.center-above {
+  flex: 1 1 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -237,10 +244,6 @@ ul {
   font-size: 1pt;
 }
 
-.todo-box {
-  padding: 50px 50px;
-  background-color: darkgray;
-}
 .bottom-row > div {
   margin-bottom: 20px;
 }
@@ -254,4 +257,8 @@ ul {
 #todoBtn {
   background-color: #a65a5a00;
   border: #a65a5a00;
+}
+
+.todo-box {
+  position: relative;
 }

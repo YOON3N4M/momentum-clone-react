@@ -1,10 +1,11 @@
 #clock-box {
   height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #clock {
   font-size: 1050%;
   letter-spacing: -5px;
   color: white;
-  border: 1px;
-  border-color: black;
 }

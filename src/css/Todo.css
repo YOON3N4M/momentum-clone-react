@@ -8,13 +8,15 @@
 }
 #todoBox {
   width: 270px;
-  height: 450px;
+  min-height: 200px;
+  max-height: 450px;
   position: absolute;
   background-color: white;
   z-index: 5;
-  top: 35%;
-  left: 80%;
   border-radius: 5px;
+  bottom: 3rem;
+  right: 1rem;
+  overflow: hidden;
 }
 .margin-left {
   padding-left: 10px;
@@ -27,25 +29,29 @@
   font-size: 20px;
   font-weight: 700;
   cursor: pointer;
+  text-shadow: 0 1px 5px rgb(0 0 0 / 10%);
 }
 .styled-btn-black {
   background-color: rgba(0, 0, 0, 0);
   border: 0px;
   color: black;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 100;
   cursor: pointer;
 }
 #todo-header {
   width: 270px;
-  height: 12%;
+  min-height: 35px;
   font-size: 20px;
   display: flex;
   align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 #todo-list {
   width: 270px;
-  height: 80%;
+  min-height: 150px;
+  max-height: 360px;
   font-size: 1rem;
   overflow-y: scroll;
 }
@@ -59,7 +65,8 @@
 
 #todo-input-box {
   width: 270px;
-  height: 8%;
+  max-height: 35px;
+  min-height: 35px;
   display: flex;
   align-items: center;
 }
