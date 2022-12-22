@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../css/Todo.css";
 function Todo() {
   const [todoShow, setTodoShow] = useState(false);
   const [todo, setTodo] = useState("");
   const [todoList, setTodoList] = useState([]);
+  const [inboxShow, setInboxShow] = useState(true);
+
   const TODO_KEY = "todo";
 
   function todoShowBtn() {
@@ -14,6 +16,18 @@ function Todo() {
       setTodoShow(false);
     }
   }
+  useEffect(() => {
+    const localTodo = localStorage.getItem(TODO_KEY);
+
+    if (localTodo !== null) {
+      const getTodo = JSON.parse(localTodo);
+      setTodoList(getTodo);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(TODO_KEY, JSON.stringify(todoList));
+  }, [todoList]);
 
   function onChange(event) {
     setTodo(event.target.value);
@@ -24,7 +38,11 @@ function Todo() {
     if (todo === "") {
       return;
     }
-    setTodoList((currentArray) => [...currentArray, todo]);
+    const newTodo = {
+      id: Date.now(),
+      value: todo,
+    };
+    setTodoList((currentArray) => [...currentArray, newTodo]);
     setTodo("");
   };
 
@@ -32,16 +50,39 @@ function Todo() {
     <div>
       {todoShow ? (
         <div id="todoBox">
-          <div id="todo-header">header</div>
-          <div id="todo-list">list</div>
+          <div id="todo-header">
+            <span className="margin-left">Inbox ({todoList.length})</span>
+          </div>
+          <div id="todo-list">
+            <ul>
+              {inboxShow === true ? null : null}
+
+              {todoList.length !== 0
+                ? todoList.map((item) => (
+                    <li className="margin-left" id="todo-item">
+                      <label>
+                        <input id="todo-checkbox" type="checkbox"></input>
+                      </label>
+                      <span>{item.value}</span>
+                    </li>
+                  ))
+                : null}
+            </ul>
+          </div>
           <div id="todo-input-box">
-            <form onSubmit={onSubmit}>
-              <input onChange={onChange} id="todo-input"></input>
+            <form className="margin-left" onSubmit={onSubmit}>
+              <input
+                type="text"
+                value={todo}
+                onChange={onChange}
+                id="todo-input"
+                placeholder="New Todo"
+              ></input>
             </form>
           </div>
         </div>
       ) : null}
-      <button id="todo-btn" onClick={todoShowBtn}>
+      <button className="styled-btn" onClick={todoShowBtn}>
         Todo
       </button>
     </div>

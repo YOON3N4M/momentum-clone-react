@@ -3,12 +3,16 @@
   height: 450px;
   position: absolute;
   background-color: white;
-  border-radius: 5px;
   z-index: 5;
   top: 35%;
   left: 80%;
+  border-radius: 5px;
 }
-#todo-btn {
+.margin-left {
+  padding-left: 10px;
+}
+
+.styled-btn {
   background-color: rgba(0, 0, 0, 0);
   border: 0px;
   color: white;
@@ -17,20 +21,35 @@
 }
 
 #todo-header {
-  background-color: red;
   width: 270px;
   height: 12%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
 }
 #todo-list {
-  background-color: blue;
   width: 270px;
   height: 80%;
+  font-size: 1rem;
+  overflow-y: scroll;
 }
+#todo-checkbox {
+  margin-right: 8px;
+}
+#todo-item {
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+
 #todo-input-box {
-  background-color: green;
   width: 270px;
   height: 8%;
+  display: flex;
+  align-items: center;
 }
 #todo-input {
   font-size: 1rem;
+  border: none;
+  outline: none;
+  width: 240px;
 }

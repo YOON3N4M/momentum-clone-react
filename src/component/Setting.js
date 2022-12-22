@@ -1,7 +1,7 @@
 function Setting() {
   return (
     <div>
-      <button>setting</button>
+      <button className="styled-btn">setting</button>
     </div>
   );
 }
