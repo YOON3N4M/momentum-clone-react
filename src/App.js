@@ -36,12 +36,18 @@ function App() {
         </div>
         <div className="bottom-center">
           <div id="quote">
-            <span></span>
+            <span
+              style={{
+                color: "white",
+              }}
+            >
+              가나다라마바사아자차카타파하하하하하하하ㅁㄴㅇㄴㅁㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴㅁㅇㅁㄴㅇㅁㄴㅇㅁㅇㅁㄴㅇㅁㄴㅇㅁㅇ
+            </span>
             <span></span>
           </div>
         </div>
         <div className="bottom-right">
-          <div>
+          <div className="todo-wrap">
             <Todo />
           </div>
         </div>
