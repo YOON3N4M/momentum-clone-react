@@ -181,13 +181,12 @@ ul {
   position: relative;
   display: inline-flex;
   flex: 1 1;
-  border: 1px solid red;
 }
 .center {
   display: flex;
   justify-content: center;
   flex: 1 1 auto;
-  border: 1px solid red;
+
   flex-direction: column;
   text-align: center;
 }
@@ -199,7 +198,6 @@ ul {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid red;
 }
 
 .bottom-row {

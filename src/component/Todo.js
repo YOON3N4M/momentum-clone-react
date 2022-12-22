@@ -4,7 +4,8 @@ function Todo() {
   const [todoShow, setTodoShow] = useState(false);
   const [todo, setTodo] = useState("");
   const [todoList, setTodoList] = useState([]);
-  const [inboxShow, setInboxShow] = useState(true);
+  const [chooseBox, setChooseBox] = useState(true);
+  const [todoState, setTodoState] = useState(false);
 
   const TODO_KEY = "todo";
 
@@ -41,6 +42,7 @@ function Todo() {
     const newTodo = {
       id: Date.now(),
       value: todo,
+      isDone: todoState,
     };
     setTodoList((currentArray) => [...currentArray, newTodo]);
     setTodo("");
@@ -55,8 +57,6 @@ function Todo() {
           </div>
           <div id="todo-list">
             <ul>
-              {inboxShow === true ? null : null}
-
               {todoList.length !== 0
                 ? todoList.map((item) => (
                     <li className="margin-left fadeup" id="todo-item">
