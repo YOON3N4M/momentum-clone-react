@@ -49,7 +49,7 @@ function Todo() {
   return (
     <div>
       {todoShow ? (
-        <div id="todoBox">
+        <div id="todoBox" className="fadeup">
           <div id="todo-header">
             <span className="margin-left">Inbox ({todoList.length})</span>
           </div>
@@ -59,7 +59,7 @@ function Todo() {
 
               {todoList.length !== 0
                 ? todoList.map((item) => (
-                    <li className="margin-left" id="todo-item">
+                    <li className="margin-left fadeup" id="todo-item">
                       <label>
                         <input id="todo-checkbox" type="checkbox"></input>
                       </label>

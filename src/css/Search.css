@@ -1,0 +1,7 @@
+.no-outline-input {
+  outline: none;
+}
+.search {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}

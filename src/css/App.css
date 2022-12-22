@@ -252,17 +252,7 @@ ul {
 .bottom-right {
   margin-right: 20px;
 }
-#clock-box {
-  height: 150px;
-}
-#clock {
-  font-size: 1050%;
-  letter-spacing: -5px;
-}
 
-#greeting {
-  font-size: 250%;
-}
 #todoBtn {
   background-color: #a65a5a00;
   border: #a65a5a00;

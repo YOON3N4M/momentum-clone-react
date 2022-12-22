@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../css/Search.css";
 function Search() {
   const url = "https://www.google.com/search?q=";
   function goSearch(e) {
@@ -8,7 +9,11 @@ function Search() {
   return (
     <div>
       <form>
-        <input onSubmit={goSearch} className="search"></input>
+        <input
+          placeholder="search on google"
+          onSubmit={goSearch}
+          className="search no-outline-input"
+        ></input>
       </form>
     </div>
   );

@@ -4,6 +4,8 @@ import Weather from "./component/Weather";
 import Background from "./component/Background";
 import Search from "./component/Search";
 import Setting from "./component/Setting";
+import Greeting from "./component/Greeting";
+import Clock from "./component/Clock";
 
 function App() {
   return (
@@ -24,12 +26,8 @@ function App() {
       </div>
       <div className="center-above"></div>
       <div className="center">
-        <div id="clock-box">
-          <span id="clock"></span>
-        </div>
-        <div>
-          <span id="greeting"></span>
-        </div>
+        <Clock />
+        <Greeting />
       </div>
       <div className="center-below"></div>
       <div className="bottom-row">
