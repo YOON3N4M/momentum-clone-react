@@ -1,7 +1,4 @@
-function ShowTodoList({ todoList, chooseBox, doneList }) {
-  const inboxList = todoList.filter((p) => p.Done !== true);
-  console.log(inboxList);
-
+function ShowTodoList({ todoList, chooseBox, doneList, inboxList }) {
   return (
     <div id="todo-list">
       <ul>

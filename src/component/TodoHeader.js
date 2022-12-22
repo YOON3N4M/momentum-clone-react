@@ -1,6 +1,4 @@
-function TodoHeader({ changeBox, chosenBox, todoList, doneList }) {
-  const inboxList = todoList.filter((p) => p.Done !== true);
-
+function TodoHeader({ changeBox, chosenBox, todoList, doneList, inboxList }) {
   return (
     <div id="todo-header">
       {chosenBox === "Inbox" ? (

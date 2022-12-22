@@ -6,6 +6,7 @@ function Todo() {
   const [todoShow, setTodoShow] = useState(false);
   const [todo, setTodo] = useState("");
   const [todoList, setTodoList] = useState([]);
+  const [inboxList, setInboxList] = useState([]);
   const [doneList, setDoneList] = useState([]);
   const [chooseBox, setChooseBox] = useState(true);
   const [chosenBox, setChosenBox] = useState("Inbox");
@@ -27,12 +28,14 @@ function Todo() {
     if (localTodo !== null) {
       const getTodo = JSON.parse(localTodo);
       setTodoList(getTodo);
+      setInboxList(todoList.filter((p) => p.Done !== true));
       setDoneList(getTodo.filter((p) => p.Done === true));
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem(TODO_KEY, JSON.stringify(todoList));
+    setInboxList(todoList.filter((p) => p.Done !== true));
     setDoneList(todoList.filter((p) => p.Done === true));
   }, [todoList]);
 
@@ -79,12 +82,14 @@ function Todo() {
             chosenBox={chosenBox}
             todoList={todoList}
             doneList={doneList}
+            inboxList={inboxList}
           />
 
           <ShowTodoList
             doneList={doneList}
             chooseBox={chooseBox}
             todoList={todoList}
+            inboxList={inboxList}
           />
           <div id="todo-input-box">
             <form className="margin-left" onSubmit={onSubmit}>
