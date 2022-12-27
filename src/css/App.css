@@ -107,7 +107,7 @@ section {
 }
 body {
   line-height: 1;
-  text-shadow: 0 1px 5px rgb(0 0 0 / 10%);
+  text-shadow: 0 1px 5px rgb(0 0 0 / 30%);
 }
 ol,
 ul {
@@ -261,4 +261,120 @@ ul {
 
 .todo-box {
   position: relative;
+}
+
+.fadeup {
+  animation: fadeup 0.5s ease-in-out;
+  -moz-animation: fadeup 0.5s ease-in-out;
+  /* Firefox */
+  -webkit-animation: fadeup 0.5s ease-in-out;
+  /* Safari and Chrome */
+  -o-animation: fadeup 0.5s ease-in-out;
+}
+@keyframes fadeup {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 100%;
+    transform: none;
+  }
+}
+
+@-moz-keyframes fadeup {
+  /* Firefox */
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 100%;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeup {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 100%;
+    transform: none;
+  }
+}
+
+@-o-keyframes fadeup {
+  /* Opera */
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 100%;
+    transform: none;
+  }
+}
+.fadein {
+  animation: fadein 0.3s ease;
+  -moz-animation: fadein 0.3s ease;
+  /* Firefox */
+  -webkit-animation: fadein 0.3s ease;
+  /* Safari and Chrome */
+  -o-animation: fadein 0.3s ease;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+.visible {
+  visibility: visible;
+}
+.invisible {
+  display: none;
 }

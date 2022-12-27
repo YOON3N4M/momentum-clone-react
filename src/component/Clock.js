@@ -7,7 +7,7 @@ function Clock() {
 
   return (
     <div id="clock-box">
-      <span id="clock">
+      <span id="clock" className="fadein">
         {hours}:{minutes}
       </span>
     </div>

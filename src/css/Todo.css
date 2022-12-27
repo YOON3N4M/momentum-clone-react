@@ -1,11 +1,3 @@
-.fadeup {
-  animation: fadeup 0.5s ease-in-out;
-  -moz-animation: fadeup 0.5s ease-in-out;
-  /* Firefox */
-  -webkit-animation: fadeup 0.5s ease-in-out;
-  /* Safari and Chrome */
-  -o-animation: fadeup 0.5s ease-in-out;
-}
 #todoBox {
   width: 270px;
   min-height: 200px;
@@ -17,6 +9,7 @@
   bottom: 3rem;
   right: 1rem;
   overflow: hidden;
+  text-shadow: 0 1px 5px rgb(0 0 0 / 10%);
 }
 .margin-left {
   padding-left: 10px;
@@ -75,55 +68,4 @@
   border: none;
   outline: none;
   width: 240px;
-}
-
-@keyframes fadeup {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 100%;
-    transform: none;
-  }
-}
-
-@-moz-keyframes fadeup {
-  /* Firefox */
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 100%;
-    transform: none;
-  }
-}
-
-@-webkit-keyframes fadeup {
-  /* Safari and Chrome */
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 100%;
-    transform: none;
-  }
-}
-
-@-o-keyframes fadeup {
-  /* Opera */
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 100%;
-    transform: none;
-  }
 }

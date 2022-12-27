@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import React from "react";
+
 import "../css/Background.css";
 
 function Background() {
@@ -23,7 +25,7 @@ function Background() {
           <img
             id="background-image"
             src={img[Math.floor(Math.random() * 20)].urls.full}
-            alt="img"
+            className="fadein visible"
           ></img>
         </div>
       )}
@@ -31,4 +33,4 @@ function Background() {
   );
 }
 
-export default Background;
+export default React.memo(Background);

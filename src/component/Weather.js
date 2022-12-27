@@ -28,7 +28,7 @@ function Weather() {
   return (
     <div>
       {loading ? null : (
-        <div id="weather">
+        <div id="weather" className="fadein">
           <span id="weather-city">{weatherInfo.name}</span>
           <span>{`${weatherInfo.weather[0].main}  ${weatherInfo.main.temp} °C`}</span>
         </div>

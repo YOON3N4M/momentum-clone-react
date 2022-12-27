@@ -86,9 +86,9 @@ function Todo() {
           />
 
           <ShowTodoList
+            todoList={todoList}
             doneList={doneList}
             chooseBox={chooseBox}
-            todoList={todoList}
             inboxList={inboxList}
           />
           <div id="todo-input-box">
@@ -104,7 +104,7 @@ function Todo() {
           </div>
         </div>
       ) : null}
-      <button className="styled-btn" onClick={todoShowBtn}>
+      <button className="styled-btn fadein" onClick={todoShowBtn}>
         Todo
       </button>
     </div>

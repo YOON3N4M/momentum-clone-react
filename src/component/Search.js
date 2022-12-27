@@ -7,7 +7,7 @@ function Search() {
     // window.location.href = `https://www.google.com/search?q=${this.value}`;
   }
   return (
-    <div>
+    <div className="fadein">
       <form>
         <input
           placeholder="search on google"
