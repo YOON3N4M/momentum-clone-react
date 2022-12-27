@@ -1,25 +1,61 @@
-function ShowTodoList({ todoList, chooseBox, doneList, inboxList }) {
+function ShowTodoList({
+  todoList,
+  chooseBox,
+  doneList,
+  inboxList,
+  setInboxList,
+  setDoneList,
+  TODO_KEY,
+}) {
+  function stateChange(item) {
+    if (item.Done === false) {
+      item.Done = true;
+    } else if (item.Done !== false) {
+      item.Done = false;
+    }
+    console.log(inboxList);
+    console.log(doneList);
+    setInboxList(todoList.filter((p) => p.Done === false));
+    setDoneList(todoList.filter((p) => p.Done === true));
+    localStorage.setItem(TODO_KEY, JSON.stringify(todoList));
+    // setTodoList((prev) => prev.filter((todo) => todo.id !== item.id));
+  }
+
   return (
     <div id="todo-list">
       <ul>
         {todoList.length === 0 ? null : null}
         {inboxList.length !== 0 && chooseBox === true
           ? inboxList.map((item) => (
-              <li className="margin-left fadeup" id="todo-item">
+              <li
+                onClick={() => stateChange(item)}
+                key={item.id}
+                className="margin-left fadeup"
+                id="todo-item"
+              >
                 <label>
-                  <input id="todo-checkbox" type="checkbox"></input>
+                  <input
+                    key={item.id}
+                    id="todo-checkbox"
+                    type="checkbox"
+                  ></input>
                 </label>
-                <span>{item.value}</span>
+                <span key={item.id}>{item.value}</span>
               </li>
             ))
           : null}
         {doneList.length !== 0 && chooseBox === false
           ? doneList.map((item) => (
-              <li className="margin-left fadeup" id="todo-item">
+              <li
+                onClick={() => stateChange(item)}
+                key={item.id}
+                className="margin-left fadeup"
+                id="todo-item"
+              >
                 <label>
                   <input id="todo-checkbox" type="checkbox"></input>
                 </label>
-                <span>{item.value}</span>
+                <span className="done">{item.value}</span>
               </li>
             ))
           : null}

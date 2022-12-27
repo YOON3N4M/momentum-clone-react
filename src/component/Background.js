@@ -8,7 +8,10 @@ function Background() {
   const [loading, setLoading] = useState(true);
   const API_KEY = "BSkq_l1863qp1OeCizkCs1XVT5Kc16gWMD9qK2XquQc";
   const keyword = "wallpapers,landscape";
-  const url = `https://api.unsplash.com/search/photos?page=2&query=${keyword}&client_id=${API_KEY}&per_page=20`;
+  const imgQuantity = 20;
+  const [imgNum, setImgNum] = useState(Math.floor(Math.random() * imgQuantity));
+  const url = `https://api.unsplash.com/search/photos?page=2&query=${keyword}&client_id=${API_KEY}&per_page=${imgQuantity}`;
+
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
@@ -24,7 +27,7 @@ function Background() {
         <div className="background-image-wrapper">
           <img
             id="background-image"
-            src={img[Math.floor(Math.random() * 20)].urls.full}
+            src={img[imgNum].urls.full}
             className="fadein visible"
           ></img>
         </div>

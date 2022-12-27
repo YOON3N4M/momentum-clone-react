@@ -23,10 +23,14 @@ function Login({ setSavedUsername, setIsLogin }) {
   }
 
   return (
-    <div className="login-modal">
+    <div className="login-modal fadein">
       <span id="login-span">Hello, what's your name?</span>
       <form onSubmit={onSubmit}>
-        <input id="login-input" className="fadein" onChange={onChange}></input>
+        <input
+          id="login-input"
+          className="fadein border-bottom-input"
+          onChange={onChange}
+        ></input>
       </form>
     </div>
   );

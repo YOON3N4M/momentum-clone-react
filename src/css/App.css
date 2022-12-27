@@ -175,7 +175,6 @@ ul {
   justify-content: flex-start;
   text-align: right;
   min-width: 0;
-  height: 600px;
 }
 .top-left,
 .top-right {
@@ -377,4 +376,18 @@ ul {
 }
 .invisible {
   display: none;
+}
+.font-shadow10 {
+  text-shadow: 0 1px 5px rgb(0 0 0 / 10%);
+}
+.font-shadow30 {
+  text-shadow: 0 1px 5px rgb(0 0 0 / 30%);
+}
+.border-bottom-input {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 3px solid #fff;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
 }

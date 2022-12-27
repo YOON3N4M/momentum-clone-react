@@ -54,6 +54,7 @@
 #todo-item {
   font-size: 1rem;
   padding-bottom: 10px;
+  cursor: pointer;
 }
 
 #todo-input-box {
@@ -68,4 +69,8 @@
   border: none;
   outline: none;
   width: 240px;
+}
+.done {
+  color: gray;
+  text-decoration: line-through;
 }
