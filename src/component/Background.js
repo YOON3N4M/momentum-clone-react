@@ -3,7 +3,7 @@ import React from "react";
 
 import "../css/Background.css";
 
-function Background() {
+function Background({ setIsimgLoading, setCoverHide }) {
   const [img, setImg] = useState([]);
   const [loading, setLoading] = useState(true);
   const API_KEY = "BSkq_l1863qp1OeCizkCs1XVT5Kc16gWMD9qK2XquQc";
@@ -18,6 +18,8 @@ function Background() {
       .then((data) => {
         setImg(data.results);
         setLoading(false);
+        setTimeout(() => setIsimgLoading(true), 500);
+        setTimeout(() => setCoverHide(true), 1500);
       });
   }, []);
 

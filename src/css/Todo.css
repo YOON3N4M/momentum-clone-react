@@ -74,3 +74,16 @@
   color: gray;
   text-decoration: line-through;
 }
+
+#if-no-todo {
+  margin: 0 auto;
+  position: absolute;
+  left: 20%;
+  top: 40%;
+}
+#if-no-todo > * {
+  font-size: 30px;
+  color: gray;
+  font-weight: 500;
+  opacity: 30%;
+}

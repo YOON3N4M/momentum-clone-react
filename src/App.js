@@ -13,6 +13,8 @@ import Login from "./component/Login";
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [savedUsername, setSavedUsername] = useState("");
+  const [isImgLoading, setIsimgLoading] = useState(false);
+  const [coverHide, setCoverHide] = useState(false);
 
   useEffect(() => {
     const localSavedUsername = localStorage.getItem("user");
@@ -30,8 +32,19 @@ function App() {
       {isLogin ? null : (
         <Login setSavedUsername={setSavedUsername} setIsLogin={setIsLogin} />
       )}
+      <div
+        id="app-cover"
+        className={
+          "apps" +
+          (isImgLoading ? " fadeout" : "") +
+          (coverHide ? " invisible" : "")
+        }
+      ></div>
       <div id="background-box">
-        <Background />
+        <Background
+          setIsimgLoading={setIsimgLoading}
+          setCoverHide={setCoverHide}
+        />
       </div>
       <div
         className={

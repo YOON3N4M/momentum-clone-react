@@ -13,8 +13,6 @@ function ShowTodoList({
     } else if (item.Done !== false) {
       item.Done = false;
     }
-    console.log(inboxList);
-    console.log(doneList);
     setInboxList(todoList.filter((p) => p.Done === false));
     setDoneList(todoList.filter((p) => p.Done === true));
     localStorage.setItem(TODO_KEY, JSON.stringify(todoList));
@@ -25,6 +23,13 @@ function ShowTodoList({
     <div id="todo-list">
       <ul>
         {todoList.length === 0 ? null : null}
+
+        {inboxList.length === 0 && chooseBox === true ? (
+          <div id="if-no-todo">
+            <span>no todo here</span>
+          </div>
+        ) : null}
+
         {inboxList.length !== 0 && chooseBox === true
           ? inboxList.map((item) => (
               <li
@@ -44,6 +49,13 @@ function ShowTodoList({
               </li>
             ))
           : null}
+
+        {doneList.length === 0 && chooseBox === false ? (
+          <div id="if-no-todo">
+            <span>no todo here</span>
+          </div>
+        ) : null}
+
         {doneList.length !== 0 && chooseBox === false
           ? doneList.map((item) => (
               <li
