@@ -11,6 +11,8 @@ import Clock from "./component/Clock";
 import Login from "./component/Login";
 
 function App() {
+  const [img, setImg] = useState([]); // Background.js에서 API로 받아오는 이미지
+  const [imgNum, setImgNum] = useState(Math.floor(Math.random() * 20));
   const [isLogin, setIsLogin] = useState(false);
   const [savedUsername, setSavedUsername] = useState("");
   const [isImgLoading, setIsimgLoading] = useState(false);
@@ -42,6 +44,10 @@ function App() {
       ></div>
       <div id="background-box">
         <Background
+          img={img}
+          setImg={setImg}
+          imgNum={imgNum}
+          setImgNum={setImgNum}
           setIsimgLoading={setIsimgLoading}
           setCoverHide={setCoverHide}
         />
@@ -70,7 +76,12 @@ function App() {
         <div className="center-below"></div>
         <div className="bottom-row">
           <div className="bottom-left">
-            <Setting />
+            <Setting
+              img={img}
+              setImgNum={setImgNum}
+              setIsimgLoading={setIsimgLoading}
+              setCoverHide={setCoverHide}
+            />
           </div>
           <div className="bottom-center">
             <div id="quote">

@@ -43,3 +43,11 @@
 .actived {
   color: black;
 }
+.background-img-list {
+  width: 200px;
+  height: 133px;
+  aspect-ratio: auto 1 / 1;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}

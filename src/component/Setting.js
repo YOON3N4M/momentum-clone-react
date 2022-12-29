@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import SettingContents from "./SettingContents";
 import "../css/Setting.css";
 
-function Setting() {
+function Setting({ img, setImgNum, setIsimgLoading, setCoverHide }) {
   const [showSetting, setShowSetting] = useState(false);
   const [activedNav, setActivedNav] = useState(0);
 
@@ -64,7 +64,13 @@ function Setting() {
               </li>
             </ul>
           </div>
-          <SettingContents activedNav={activedNav} />
+          <SettingContents
+            img={img}
+            activedNav={activedNav}
+            setImgNum={setImgNum}
+            setIsimgLoading={setIsimgLoading}
+            setCoverHide={setCoverHide}
+          />
         </div>
       ) : null}
 
