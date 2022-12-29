@@ -1,7 +1,13 @@
 #search-icon {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   color: white;
+  display: inline-block;
+  margin-top: 20px;
+  cursor: pointer;
+}
+#search-box {
+  display: flex;
 }
 .no-outline-input {
   outline: none;
@@ -11,6 +17,10 @@
   color: white;
   font-weight: 500px;
   font-size: 20px;
+  display: inline;
+  margin: 20px 0 0 20px;
+  border: 0px;
+  width: 170px;
 }
 .search:hover {
   background-color: rgba(0, 0, 0, 5%);

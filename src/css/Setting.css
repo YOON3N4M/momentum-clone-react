@@ -1,0 +1,45 @@
+#setting-box {
+  position: absolute;
+  width: 700px;
+  height: 500px;
+  background-color: white;
+  bottom: 3rem;
+  left: 1rem;
+  display: flex;
+  border-radius: 5px;
+}
+
+#setting-nav-box {
+  width: 175px;
+  height: 475px;
+  padding-top: 25px;
+  padding-left: 25px;
+  border-right: 0.5px;
+  border-color: rgb(181, 180, 180);
+  border-style: solid;
+}
+
+#setting-contents-box {
+  width: 450px;
+  height: 475px;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  overflow-y: scroll;
+}
+#setting-icon {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.setting-nav-item {
+  font-size: 16px;
+  font-weight: 900;
+  color: gray;
+  padding-bottom: 10px;
+  text-shadow: 0;
+  cursor: pointer;
+}
+.actived {
+  color: black;
+}

@@ -161,11 +161,7 @@ ul {
   height: 60px;
   flex-grow: 0;
 }
-.search {
-  margin: 20px 0 0 20px;
-  border: 0px;
-  background-color: gray;
-}
+
 .top-center {
   justify-content: center;
   flex-grow: 0;
@@ -446,4 +442,8 @@ ul {
 #app-cover {
   background-color: black;
   z-index: 100;
+}
+
+.no-shadow {
+  text-shadow: 0 0px 0px rgb(0 0 0 / 0%);
 }

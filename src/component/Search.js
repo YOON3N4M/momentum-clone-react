@@ -13,15 +13,23 @@ function Search() {
     setKeyword(event.target.value);
   }
   return (
-    <div className="fadein">
-      <form onSubmit={onSubmit}>
-        <input
-          value={keyword}
-          onChange={onChange}
-          placeholder="search on google"
-          className="search no-outline-input font-shadow30"
-        ></input>
-      </form>
+    <div id="search-box">
+      <div className="fadein">
+        <form onSubmit={onSubmit}>
+          <input
+            value={keyword}
+            onChange={onChange}
+            placeholder="search on google"
+            className="search no-outline-input font-shadow30"
+          ></input>
+        </form>
+      </div>
+      <img
+        onClick={onSubmit}
+        id="search-icon"
+        src="img/search_icon.png"
+        alt=""
+      />
     </div>
   );
 }
