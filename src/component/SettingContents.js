@@ -15,11 +15,11 @@ function SettingContents({
 
   console.log(img);
   return (
-    <div id="setting-contents-box">
+    <div id="setting-contents-box" className="styled-scroll">
       {activedNav === 0 ? <span>0번 입니다.</span> : null}
       {activedNav === 1 ? <span>1번 입니다.</span> : null}
       {activedNav === 2 ? (
-        <div>
+        <div id="background-img-box">
           {img.map((img, index) => (
             <img
               onClick={() => onClick(index)}

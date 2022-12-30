@@ -29,6 +29,7 @@ function Background({ setIsimgLoading, setCoverHide, img, setImg, imgNum }) {
             id="background-image"
             src={img[imgNum].urls.full}
             className="fadein visible"
+            alt=""
           ></img>
         </div>
       )}

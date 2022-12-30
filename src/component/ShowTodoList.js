@@ -20,7 +20,7 @@ function ShowTodoList({
   }
 
   return (
-    <div id="todo-list">
+    <div id="todo-list" className="styled-scroll">
       <ul>
         {todoList.length === 0 ? null : null}
 

@@ -6,6 +6,10 @@ function Setting({ img, setImgNum, setIsimgLoading, setCoverHide }) {
   const [showSetting, setShowSetting] = useState(false);
   const [activedNav, setActivedNav] = useState(0);
 
+  useEffect(() => {
+    setActivedNav(0);
+  }, [showSetting]);
+
   return (
     <div>
       {showSetting ? (

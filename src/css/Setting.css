@@ -1,6 +1,6 @@
 #setting-box {
   position: absolute;
-  width: 700px;
+  width: 720px;
   height: 500px;
   background-color: white;
   bottom: 3rem;
@@ -10,7 +10,7 @@
 }
 
 #setting-nav-box {
-  width: 175px;
+  width: 155px;
   height: 475px;
   padding-top: 25px;
   padding-left: 25px;
@@ -20,7 +20,7 @@
 }
 
 #setting-contents-box {
-  width: 450px;
+  width: 490px;
   height: 475px;
   padding-top: 25px;
   padding-left: 25px;
@@ -47,7 +47,10 @@
   width: 200px;
   height: 133px;
   aspect-ratio: auto 1 / 1;
-  margin-right: 20px;
+  margin-right: 10px;
   margin-bottom: 10px;
   cursor: pointer;
+}
+#background-img-box {
+  padding-left: 35px;
 }
