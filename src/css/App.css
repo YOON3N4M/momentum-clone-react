@@ -220,6 +220,7 @@ ul {
 .bottom-row {
   display: flex;
   justify-content: space-between;
+  min-height: 44.5px;
 }
 .hidden {
   display: none;
@@ -461,4 +462,15 @@ ul {
 
 .no-shadow {
   text-shadow: 0 0px 0px rgb(0 0 0 / 0%);
+}
+
+.quote {
+  color: white;
+}
+.display-flex {
+  display: flex;
+}
+.blank {
+  width: 59.38px;
+  height: 24.5px;
 }

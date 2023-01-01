@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../css/Search.css";
-function Search() {
+function Search({ componentHide }) {
   const [keyword, setKeyword] = useState("");
   let url = `https://www.google.com/search?q=${keyword}`;
   function onSubmit(event) {
@@ -14,7 +14,11 @@ function Search() {
   }
   return (
     <div id="search-box">
-      <div className="fadein">
+      <div
+        className={
+          "fadein" + (componentHide.showSearch === true ? "" : " invisible")
+        }
+      >
         <form onSubmit={onSubmit}>
           <input
             value={keyword}
@@ -27,6 +31,9 @@ function Search() {
       <img
         onClick={onSubmit}
         id="search-icon"
+        className={
+          "fadein" + (componentHide.showSearch === false ? " invisible" : "")
+        }
         src="img/search_icon.png"
         alt=""
       />

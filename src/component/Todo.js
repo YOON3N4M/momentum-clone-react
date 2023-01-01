@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "../css/Todo.css";
 import ShowTodoList from "./ShowTodoList";
 import TodoHeader from "./TodoHeader";
-function Todo() {
+function Todo({ componentHide }) {
   const [todoShow, setTodoShow] = useState(false);
   const [todo, setTodo] = useState("");
   const [todoList, setTodoList] = useState([]);
@@ -106,9 +106,18 @@ function Todo() {
           </div>
         </div>
       ) : null}
-      <button className="styled-btn fadein" onClick={todoShowBtn}>
+
+      <button
+        className={
+          "styled-btn" +
+          " fadein" +
+          (componentHide.showTodo === true ? "" : " invisible")
+        }
+        onClick={todoShowBtn}
+      >
         Todo
       </button>
+      {componentHide.showTodo === false ? <div className="blank"></div> : null}
     </div>
   );
 }

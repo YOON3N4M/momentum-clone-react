@@ -2,7 +2,7 @@ import "../css/Greeting.css";
 
 import { useState, useEffect } from "react";
 
-function Greeting({ savedUsername }) {
+function Greeting({ savedUsername, componentHide }) {
   const [sayHi, setSayHi] = useState("");
   const date = new Date();
   const hours = date.getHours();
@@ -27,7 +27,13 @@ function Greeting({ savedUsername }) {
 
   return (
     <div>
-      <span className="greeting fadein">
+      <span
+        className={
+          "greeting" +
+          " fadein" +
+          (componentHide.showGreeting === true ? "" : " invisible")
+        }
+      >
         {sayHi} {savedUsername}
       </span>
     </div>

@@ -2,7 +2,17 @@ import { useState, useEffect } from "react";
 import SettingContents from "./SettingContents";
 import "../css/Setting.css";
 
-function Setting({ img, setImgNum, setIsimgLoading, setCoverHide }) {
+function Setting({
+  img,
+  setImgNum,
+  setIsimgLoading,
+  setCoverHide,
+  quotes,
+  quotesNum,
+  setQuotesNum,
+  componentHide,
+  setComponentHide,
+}) {
   const [showSetting, setShowSetting] = useState(false);
   const [activedNav, setActivedNav] = useState(0);
 
@@ -74,6 +84,11 @@ function Setting({ img, setImgNum, setIsimgLoading, setCoverHide }) {
             setImgNum={setImgNum}
             setIsimgLoading={setIsimgLoading}
             setCoverHide={setCoverHide}
+            quotes={quotes}
+            quotesNum={quotesNum}
+            setQuotesNum={setQuotesNum}
+            componentHide={componentHide}
+            setComponentHide={setComponentHide}
           />
         </div>
       ) : null}
@@ -81,7 +96,7 @@ function Setting({ img, setImgNum, setIsimgLoading, setCoverHide }) {
       <img
         src="img/setting_icon.png"
         onClick={() => setShowSetting((prev) => !prev)}
-        alt=""
+        alt="d"
         id="setting-icon"
       />
     </div>

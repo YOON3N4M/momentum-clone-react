@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../css/Weather.css";
 
-function Weather() {
+function Weather({ componentHide }) {
   const [weatherInfo, setWeatherInfo] = useState([]);
   const [loading, setLoading] = useState(true); // 해당 로딩이 없으면 api를 가져오기전에 div를 뿌리려고 해서 에러가 남.
 
@@ -28,7 +28,15 @@ function Weather() {
   return (
     <div>
       {loading ? null : (
-        <div id="weather" className="fadein">
+        <div
+          id="weather"
+          className={
+            "fadein" +
+            (componentHide.showWeather === true
+              ? " display-flex"
+              : " invisible")
+          }
+        >
           <span id="weather-city">{weatherInfo.name}</span>
           <span>{`${weatherInfo.weather[0].main}  ${weatherInfo.main.temp} °C`}</span>
         </div>

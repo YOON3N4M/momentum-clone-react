@@ -1,7 +1,7 @@
 import "../css/Clock.css";
 import { useEffect, useState } from "react";
 
-function Clock() {
+function Clock({ componentHide }) {
   const [date, setDate] = useState(new Date());
   const [hours, setHours] = useState(String(date.getHours()).padStart(2, "0"));
   const [minutes, setMinutes] = useState(
@@ -21,7 +21,12 @@ function Clock() {
 
   return (
     <div id="clock-box">
-      <span id="clock" className="fadein">
+      <span
+        id="clock"
+        className={
+          "fadein" + (componentHide.showClock === true ? "" : " invisible")
+        }
+      >
         {hours}:{minutes}
       </span>
     </div>

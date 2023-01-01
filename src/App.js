@@ -9,6 +9,7 @@ import Setting from "./component/Setting";
 import Greeting from "./component/Greeting";
 import Clock from "./component/Clock";
 import Login from "./component/Login";
+import Quotes from "./component/Quotes";
 
 function App() {
   const [img, setImg] = useState([]); // Background.js에서 API로 받아오는 이미지
@@ -17,6 +18,17 @@ function App() {
   const [savedUsername, setSavedUsername] = useState("");
   const [isImgLoading, setIsimgLoading] = useState(false);
   const [coverHide, setCoverHide] = useState(false);
+  const [componentHide, setComponentHide] = useState({
+    showSearch: true,
+    showWeather: true,
+    showClock: true,
+    showGreeting: true,
+    showTodo: true,
+    showQuotes: true,
+  });
+
+  const [quotes, setQuotes] = useState([]);
+  const [quotesNum, setQuotesNum] = useState(Math.floor(Math.random() * 10)); //10은 명언 개수
 
   useEffect(() => {
     const localSavedUsername = localStorage.getItem("user");
@@ -60,18 +72,21 @@ function App() {
         <div className="top-bar"></div>
         <div className="top-row">
           <div className="top-left">
-            <Search />
+            <Search componentHide={componentHide} />
           </div>
           <div className="top-center"></div>
 
           <div className="top-right">
-            <Weather />
+            <Weather componentHide={componentHide} />
           </div>
         </div>
         <div className="center-above"></div>
         <div className="center">
-          <Clock />
-          <Greeting savedUsername={savedUsername} />
+          <Clock componentHide={componentHide} />
+          <Greeting
+            savedUsername={savedUsername}
+            componentHide={componentHide}
+          />
         </div>
         <div className="center-below"></div>
         <div className="bottom-row">
@@ -81,23 +96,25 @@ function App() {
               setImgNum={setImgNum}
               setIsimgLoading={setIsimgLoading}
               setCoverHide={setCoverHide}
+              quotes={quotes}
+              quotesNum={quotesNum}
+              setQuotesNum={setQuotesNum}
+              componentHide={componentHide}
+              setComponentHide={setComponentHide}
             />
           </div>
           <div className="bottom-center">
-            <div id="quote">
-              <span
-                style={{
-                  color: "white",
-                }}
-              >
-                중요한 것은 꺾이지 않는 마음 - 2022
-              </span>
-              <span></span>
-            </div>
+            <Quotes
+              quotes={quotes}
+              setQuotes={setQuotes}
+              quotesNum={quotesNum}
+              setQuotesNum={setQuotesNum}
+              componentHide={componentHide}
+            />
           </div>
           <div className="bottom-right">
             <div className="todo-wrap">
-              <Todo />
+              <Todo componentHide={componentHide} />
             </div>
           </div>
         </div>
