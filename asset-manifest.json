@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/momentum-clone-react/static/css/main.bc07301b.css",
-    "main.js": "/momentum-clone-react/static/js/main.c204fa17.js",
+    "main.css": "/momentum-clone-react/static/css/main.4e030564.css",
+    "main.js": "/momentum-clone-react/static/js/main.94aa282b.js",
     "index.html": "/momentum-clone-react/index.html",
-    "main.bc07301b.css.map": "/momentum-clone-react/static/css/main.bc07301b.css.map",
-    "main.c204fa17.js.map": "/momentum-clone-react/static/js/main.c204fa17.js.map"
+    "main.4e030564.css.map": "/momentum-clone-react/static/css/main.4e030564.css.map",
+    "main.94aa282b.js.map": "/momentum-clone-react/static/js/main.94aa282b.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc07301b.css",
-    "static/js/main.c204fa17.js"
+    "static/css/main.4e030564.css",
+    "static/js/main.94aa282b.js"
   ]
 }
