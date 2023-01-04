@@ -13,10 +13,13 @@
   width: 155px;
   height: 475px;
   padding-top: 25px;
-  padding-left: 25px;
   border-right: 0.5px;
   border-color: rgb(181, 180, 180);
   border-style: solid;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #setting-contents-box {
@@ -39,6 +42,18 @@
   padding-bottom: 10px;
   text-shadow: 0;
   cursor: pointer;
+  padding-left: 25px;
+}
+#name-change-btn {
+  border-radius: 15px;
+  border: 0px;
+  color: white;
+  background-color: olivedrab;
+  width: 125px;
+  height: 40px;
+  margin-left: 13.7px;
+  margin-bottom: 15px;
+  cursor: pointer;
 }
 .actived {
   color: black;
@@ -48,7 +63,7 @@
 #general-item-list {
   margin-top: 10px;
 }
-.general-item {
+.setting-item {
   border-top: 1px;
   border-color: gray;
   border-style: solid;
@@ -106,4 +121,63 @@
   font-size: 1rem;
   color: gray;
   margin-left: 10px;
+}
+
+/*토글 스위치 스타일*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 21px;
+  margin-right: 5px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #5bdb5f;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #5bdb5f;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

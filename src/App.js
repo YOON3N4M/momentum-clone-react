@@ -101,6 +101,7 @@ function App() {
               setQuotesNum={setQuotesNum}
               componentHide={componentHide}
               setComponentHide={setComponentHide}
+              setIsLogin={setIsLogin}
             />
           </div>
           <div className="bottom-center">

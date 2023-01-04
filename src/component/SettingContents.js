@@ -110,7 +110,7 @@ function SettingContents({
       }));
     }
 
-    console.log(componentHide);
+    console.log(componentHide.showTodo);
   }
   useEffect(() => {
     if (activedNav === 0) {
@@ -145,35 +145,91 @@ function SettingContents({
         <div id="general-box" className="no-shadow">
           <span id="general-show">Show</span>
           <div id="general-item-list">
-            <div className="general-item">
+            <div className="setting-item">
               <span>Search</span>
-
-              <button onClick={() => onClickShow(1)}>-</button>
+              <label className="switch">
+                <input type="checkbox" checked={componentHide.showSearch} />
+                <span
+                  onClick={() => onClickShow(1)}
+                  className="slider round"
+                ></span>
+              </label>
             </div>
-            <div className="general-item">
+            <div className="setting-item">
               <span>Weather</span>
-              <button onClick={() => onClickShow(2)}>-</button>
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={componentHide.showWeather}
+                ></input>
+                <span
+                  onClick={() => onClickShow(2)}
+                  className="slider round"
+                ></span>
+              </label>
             </div>
-            <div className="general-item">
+            <div className="setting-item">
               <span>Clock</span>
-              <button onClick={() => onClickShow(3)}>-</button>
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={componentHide.showClock}
+                ></input>
+                <span
+                  onClick={() => onClickShow(3)}
+                  className="slider round"
+                ></span>
+              </label>
             </div>
-            <div className="general-item">
+            <div className="setting-item">
               <span>Greeting</span>
-              <button onClick={() => onClickShow(4)}>-</button>
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={componentHide.showGreeting}
+                ></input>
+                <span
+                  onClick={() => onClickShow(4)}
+                  className="slider round"
+                ></span>
+              </label>
             </div>
-            <div className="general-item">
+            <div className="setting-item">
               <span>Todo</span>
-              <button onClick={() => onClickShow(5)}>-</button>
+              <label className="switch">
+                <input type="checkbox" checked={componentHide.showTodo}></input>
+                <span
+                  onClick={() => {
+                    onClickShow(5);
+                  }}
+                  className="slider round"
+                ></span>
+              </label>
             </div>
-            <div className="general-item">
+            <div className="setting-item">
               <span>Quotes</span>
-              <button onClick={() => onClickShow(6)}>-</button>
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={componentHide.showQuotes}
+                ></input>
+                <span
+                  onClick={() => onClickShow(6)}
+                  className="slider round"
+                ></span>
+              </label>
             </div>
           </div>
         </div>
       ) : null}
-      {activedNav === 1 ? <span>미완성 1번</span> : null}
+      {activedNav === 1 ? (
+        <div>
+          <div className="setting-item no-shadow">
+            <span>Clear All</span>
+            <button>-</button>
+          </div>
+        </div>
+      ) : null}
       {activedNav === 2 ? (
         <div id="background-img-box">
           {img.map((img, index) => (

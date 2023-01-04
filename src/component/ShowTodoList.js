@@ -65,7 +65,7 @@ function ShowTodoList({
                 id="todo-item"
               >
                 <label>
-                  <input id="todo-checkbox" type="checkbox"></input>
+                  <input id="todo-checkbox" type="checkbox" checked></input>
                 </label>
                 <span className="done">{item.value}</span>
               </li>

@@ -55,7 +55,7 @@ function Quotes({ quotes, setQuotes, quotesNum, setQuotesNum, componentHide }) {
   useEffect(() => {
     setQuotes(quotesSample);
   }, []);
-  console.log(quotes.length);
+
   return (
     <div>
       {quotes.length > 0 ? (

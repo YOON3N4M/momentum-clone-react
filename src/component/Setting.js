@@ -12,6 +12,7 @@ function Setting({
   setQuotesNum,
   componentHide,
   setComponentHide,
+  setIsLogin,
 }) {
   const [showSetting, setShowSetting] = useState(false);
   const [activedNav, setActivedNav] = useState(0);
@@ -38,7 +39,7 @@ function Setting({
               >
                 General
               </li>
-
+              {/* todo 부분이 딱히 의미가 없을 것 같아서 일단은 주석처리 해둠
               <li
                 onClick={() => {
                   setActivedNav(1);
@@ -51,7 +52,7 @@ function Setting({
               >
                 Todo
               </li>
-
+ */}
               <li
                 onClick={() => {
                   setActivedNav(2);
@@ -77,6 +78,14 @@ function Setting({
                 Quotes
               </li>
             </ul>
+            <button
+              onClick={() => {
+                setIsLogin(false);
+              }}
+              id="name-change-btn"
+            >
+              change your name
+            </button>
           </div>
           <SettingContents
             img={img}
@@ -96,7 +105,7 @@ function Setting({
       <img
         src="img/setting_icon.png"
         onClick={() => setShowSetting((prev) => !prev)}
-        alt="d"
+        alt=" "
         id="setting-icon"
       />
     </div>

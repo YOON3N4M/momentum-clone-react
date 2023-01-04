@@ -36,7 +36,7 @@ function Todo({ componentHide }) {
     setInboxList(todoList.filter((p) => p.Done !== true));
     setDoneList(todoList.filter((p) => p.Done === true));
     localStorage.setItem(TODO_KEY, JSON.stringify(todoList));
-  }, [todoList]);
+  }, [todoList]); //이 부분을 clear All 로 활용 할 수 있을듯 아마
 
   function onChange(event) {
     setTodo(event.target.value);
