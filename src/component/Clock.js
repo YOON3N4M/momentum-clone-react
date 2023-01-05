@@ -78,7 +78,7 @@ function Clock({ componentHide }) {
         <img
           onClick={() => setOptionOpen((prev) => !prev)}
           id="clock-option-img"
-          className={dotVisible ? "opacity-hundred" : "opacity-zero"}
+          className={dotVisible ? "opacity-hundred img-shadow" : "opacity-zero"}
           src={dotIcon}
           alt=" "
         />
