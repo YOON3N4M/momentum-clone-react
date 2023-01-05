@@ -40,7 +40,6 @@ function Clock({ componentHide }) {
           className={
             "fadein" + (componentHide.showClock === true ? "" : " invisible")
           }
-          onClick={() => setChooseClock((prev) => !prev)}
         >
           {hours}:{minutes}
         </span>
