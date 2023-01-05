@@ -15,14 +15,8 @@
   width: 30px;
   margin-left: 20px;
   cursor: pointer;
-  opacity: 50%;
 }
-#clock-option-img:hover {
-  width: 30px;
-  margin-left: 20px;
-  cursor: pointer;
-  opacity: 100%;
-}
+
 #clock-option-box {
   position: relative;
 }

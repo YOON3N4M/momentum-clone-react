@@ -12,6 +12,7 @@ function Clock({ componentHide }) {
   const [ampm, setAmpm] = useState("");
   const [optionOpen, setOptionOpen] = useState(false);
   const [chooseClock, setChooseClock] = useState(true); // true=24시간제, false=오전오후제
+  const [dotVisible, setDotVisible] = useState(false);
   useEffect(() => {
     setInterval(() => {
       setDate((prev) => new Date());
@@ -33,7 +34,11 @@ function Clock({ componentHide }) {
   }, [date]);
 
   return (
-    <div id="clock-box">
+    <div
+      onMouseOver={() => setDotVisible(true)}
+      onMouseOut={() => setDotVisible(false)}
+      id="clock-box"
+    >
       {chooseClock ? (
         <span
           id="clock"
@@ -73,6 +78,7 @@ function Clock({ componentHide }) {
         <img
           onClick={() => setOptionOpen((prev) => !prev)}
           id="clock-option-img"
+          className={dotVisible ? "opacity-hundred" : "opacity-zero"}
           src={dotIcon}
           alt=" "
         />
