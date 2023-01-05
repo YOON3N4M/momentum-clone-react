@@ -82,6 +82,9 @@ function Todo({ componentHide }) {
             todoList={todoList}
             doneList={doneList}
             inboxList={inboxList}
+            setTodoList={setTodoList}
+            setInboxList={setInboxList}
+            setDoneList={setDoneList}
           />
 
           <ShowTodoList
@@ -89,6 +92,7 @@ function Todo({ componentHide }) {
             doneList={doneList}
             chooseBox={chooseBox}
             inboxList={inboxList}
+            setTodoList={setTodoList}
             setInboxList={setInboxList}
             setDoneList={setDoneList}
             TODO_KEY={TODO_KEY}

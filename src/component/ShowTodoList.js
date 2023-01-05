@@ -1,8 +1,11 @@
+import dotIcon from "../img/dot_icon.png";
+import { useState, useEffect } from "react";
 function ShowTodoList({
   todoList,
   chooseBox,
   doneList,
   inboxList,
+  setTodoList,
   setInboxList,
   setDoneList,
   TODO_KEY,
@@ -18,7 +21,11 @@ function ShowTodoList({
     localStorage.setItem(TODO_KEY, JSON.stringify(todoList));
     // setTodoList((prev) => prev.filter((todo) => todo.id !== item.id));
   }
-
+  function deleteTodo(item) {
+    setTodoList((prev) => prev.filter((todo) => todo.id !== item.id));
+  }
+  const [dotVisible, setDotVisible] = useState(false);
+  const [showDropDown, setShowDropDown] = useState(false);
   return (
     <div id="todo-list" className="styled-scroll">
       <ul>
@@ -31,21 +38,35 @@ function ShowTodoList({
         ) : null}
 
         {inboxList.length !== 0 && chooseBox === true
-          ? inboxList.map((item) => (
-              <li
-                onClick={() => stateChange(item)}
-                key={item.id}
-                className="margin-left fadeup"
-                id="todo-item"
-              >
-                <label>
-                  <input
-                    key={item.id}
-                    id="todo-checkbox"
-                    type="checkbox"
-                  ></input>
-                </label>
-                <span key={item.id}>{item.value}</span>
+          ? inboxList.map((item, index) => (
+              <li key={item.id} className="margin-left fadeup" id="todo-item">
+                <div
+                  onMouseOver={() => setDotVisible(true)}
+                  onMouseOut={() => setDotVisible(false)}
+                  className="todo-item-box"
+                >
+                  <label>
+                    <input
+                      key={item.id}
+                      id="todo-checkbox"
+                      type="checkbox"
+                      onClick={() => stateChange(item)}
+                    ></input>
+                  </label>
+                  <div className="todo-item-span-box">
+                    <span key={item.id}>{item.value}</span>
+                  </div>
+
+                  <span
+                    className={
+                      "todo-del-btn" + (dotVisible ? "" : " opacity-zero")
+                    }
+                    alt=""
+                    onClick={() => deleteTodo(item)}
+                  >
+                    x
+                  </span>
+                </div>
               </li>
             ))
           : null}
@@ -57,17 +78,38 @@ function ShowTodoList({
         ) : null}
 
         {doneList.length !== 0 && chooseBox === false
-          ? doneList.map((item) => (
-              <li
-                onClick={() => stateChange(item)}
-                key={item.id}
-                className="margin-left fadeup"
-                id="todo-item"
-              >
-                <label>
-                  <input id="todo-checkbox" type="checkbox" checked></input>
-                </label>
-                <span className="done">{item.value}</span>
+          ? doneList.map((item, index) => (
+              <li key={item.id} className="margin-left fadeup" id="todo-item">
+                <div
+                  onMouseOver={() => setDotVisible(true)}
+                  onMouseOut={() => setDotVisible(false)}
+                  className="todo-item-box"
+                >
+                  <label>
+                    <input
+                      key={item.id}
+                      id="todo-checkbox"
+                      type="checkbox"
+                      onClick={() => stateChange(item)}
+                      checked
+                    ></input>
+                  </label>
+                  <div className="todo-item-span-box">
+                    <span className="done" key={item.id}>
+                      {item.value}
+                    </span>
+                  </div>
+
+                  <span
+                    className={
+                      "todo-del-btn" + (dotVisible ? "" : " opacity-zero")
+                    }
+                    alt=""
+                    onClick={() => deleteTodo(item)}
+                  >
+                    x
+                  </span>
+                </div>
               </li>
             ))
           : null}

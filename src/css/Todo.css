@@ -40,6 +40,7 @@
   align-items: center;
   margin-top: 5px;
   margin-bottom: 5px;
+  justify-content: space-between;
 }
 #todo-list {
   width: 270px;
@@ -50,11 +51,11 @@
 }
 #todo-checkbox {
   margin-right: 8px;
+  cursor: pointer;
 }
 #todo-item {
   font-size: 1rem;
   padding-bottom: 10px;
-  cursor: pointer;
 }
 
 #todo-input-box {
@@ -86,4 +87,76 @@
   color: gray;
   font-weight: 500;
   opacity: 30%;
+}
+
+#todo-dot-btn {
+  margin-right: 30px;
+  cursor: pointer;
+
+  filter: invert(62%) sepia(0%) saturate(4058%) hue-rotate(31deg)
+    brightness(93%) contrast(98%);
+  opacity: 50%;
+  width: 25px;
+  height: 25px;
+}
+
+.todo-dot-btn-smaller {
+  margin-right: 30px;
+  cursor: pointer;
+
+  filter: invert(62%) sepia(0%) saturate(4058%) hue-rotate(31deg)
+    brightness(93%) contrast(98%);
+  opacity: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.drop-down-todo {
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background-color: rgb(236, 236, 236);
+  top: 40px;
+  left: 150px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.drop-down-todo-list {
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background-color: rgb(236, 236, 236);
+  top: 70px;
+  left: 150px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.drop-down-todo-item {
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.todo-item-box {
+  display: flex;
+  word-break: break-all;
+}
+
+.todo-item-span-box {
+  width: 181px;
+}
+
+.todo-del-btn {
+  color: gray;
+  opacity: 40%;
+  cursor: pointer;
+  margin-left: 15px;
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import SettingContents from "./SettingContents";
 import "../css/Setting.css";
+import settingIcon from "../img/setting_icon.png";
 
 function Setting({
   img,
@@ -103,7 +104,7 @@ function Setting({
       ) : null}
 
       <img
-        src="img/setting_icon.png"
+        src={settingIcon}
         onClick={() => setShowSetting((prev) => !prev)}
         alt=" "
         id="setting-icon"

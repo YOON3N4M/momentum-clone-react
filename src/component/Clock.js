@@ -1,5 +1,6 @@
 import "../css/Clock.css";
 import { useEffect, useState } from "react";
+import dotIcon from "../img/dot_icon.png";
 
 function Clock({ componentHide }) {
   const [date, setDate] = useState(new Date());
@@ -7,14 +8,16 @@ function Clock({ componentHide }) {
   const [minutes, setMinutes] = useState(
     String(date.getMinutes()).padStart(2, "0")
   );
-  const [ampmHours, setAmpmHours] = useState(date.getHours() - 12);
+  const [ampmHours, setAmpmHours] = useState(date.getHours());
   const [ampm, setAmpm] = useState("");
+  const [optionOpen, setOptionOpen] = useState(false);
   const [chooseClock, setChooseClock] = useState(true); // true=24시간제, false=오전오후제
   useEffect(() => {
     setInterval(() => {
       setDate((prev) => new Date());
     }, 1000);
-    if (date.getHours() > 11 && date.getHours() < 24) {
+    if (date.getHours() > 12 && date.getHours() < 24) {
+      setAmpmHours(date.getHours() - 12);
       setAmpm("PM");
     } else {
       setAmpm("AM");
@@ -24,7 +27,9 @@ function Clock({ componentHide }) {
   useEffect(() => {
     setHours(String(date.getHours()).padStart(2, "0"));
     setMinutes(String(date.getMinutes()).padStart(2, "0"));
-    setAmpmHours(date.getHours() - 12);
+    if (date.getHours() > 12 && date.getHours() < 24) {
+      setAmpmHours(date.getHours() - 12);
+    }
   }, [date]);
 
   return (
@@ -45,11 +50,34 @@ function Clock({ componentHide }) {
           className={
             "fadein" + (componentHide.showClock === true ? "" : " invisible")
           }
-          onClick={() => setChooseClock((prev) => !prev)}
         >
           {ampmHours}:{minutes}
         </span>
       )}
+      <div id="clock-option-box">
+        {optionOpen ? (
+          <div className="drop-down fadein">
+            <span id="clock-option-span" className="no-shadow">
+              24-hour clock
+            </span>
+            <div id="toggle-switch-box">
+              <label className="switch-smaller">
+                <input type="checkbox" checked={chooseClock} />
+                <span
+                  onClick={() => setChooseClock((prev) => !prev)}
+                  className="slider-smaller round"
+                ></span>
+              </label>
+            </div>
+          </div>
+        ) : null}
+        <img
+          onClick={() => setOptionOpen((prev) => !prev)}
+          id="clock-option-img"
+          src={dotIcon}
+          alt=" "
+        />
+      </div>
     </div>
   );
 }

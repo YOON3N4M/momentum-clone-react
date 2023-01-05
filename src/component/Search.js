@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../css/Search.css";
+import searchIcon from "../img/search_icon.png";
 function Search({ componentHide }) {
   const [keyword, setKeyword] = useState("");
   let url = `https://www.google.com/search?q=${keyword}`;
@@ -34,7 +35,7 @@ function Search({ componentHide }) {
         className={
           "fadein" + (componentHide.showSearch === false ? " invisible" : "")
         }
-        src="img/search_icon.png"
+        src={searchIcon}
         alt=""
       />
     </div>
