@@ -27,17 +27,16 @@
 * 설정창 자체가 강의 내용에 없었습니다. 실제 momentum에는 있는 기능이라 참고하여 일부 기능을 만들어 보았습니다.
 * General 탭 - 대시보드에 보이는 검색창, 날씨, 시계, 인삿말, 투두, 명언과 같은 기능의 표시 여부를 변경 할 수 있습니다.
 * Photos 탭 - API로 받아온 이미지 20개가 보여지며 이미지 클릭시 해당 이미지로 대시보드의 배경 이미지가 변경 됩니다.
-* Quotes 탭 - 10가지의 명언이 보여지며, 클릭시 대시보드에 해당 명언이 출력됩니다. <br>
-<br>
-<br>
+* Quotes 탭 - 10가지의 명언이 보여지며, 클릭시 대시보드에 해당 명언이 출력됩니다.
+
 ### 앱기능 <br>
 
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/115640584/210734090-b31a90db-d54b-4cd3-9dd6-be326b0e0f38.png">
-처음 앱을 실행하면 해당 화면이 보여집니다. (혹은 localstorage에 username이 없다면) 여기서 입력한 내용이 username이 됩니다. 또 날씨 API를 위한 위치 액세스의 여부를 묻는 창도 출력 됩니다. 이를 수락하지 않으면 대시보드 우측 상단에 날씨 기능이 표시되지 않습니다.
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/115640584/210745170-de503ad3-ab4d-49c3-965a-5258f02c842f.png">
+처음 앱을 실행하면 해당 화면이 보여집니다. (혹은 localstorage에 username이 없다면) 여기서 입력한 내용이 username이 됩니다. 또 날씨 API를 위한 위치 액세스의 여부를 묻는 창도 출력 됩니다. 이를 수락하지 않으면 대시보드 우측 상단에 날씨 기능이 표시되지 않습니다.<br>
 
-<br>
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/115640584/210741750-8f58fe12-961c-4490-a56d-af64c818c5d7.png">
-<br>
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/115640584/210745451-bd49e2c5-863b-47cb-beea-e2613929387c.png">><br>
+
+
 * 해당 화면이 이 앱의 기본 화면(대시보드) 입니다. 
 * 가운데에 시계와 인삿말이 보여지며 시계에 커서를 올리면 24시간제와 오전,오후제로 변경이 가능한 옵션 버튼이 보여집니다.
 * 우측상단에는 API를 통해 제공받은 위치정보를 토대로 접속 지역의 날씨를 보여줍니다. 
