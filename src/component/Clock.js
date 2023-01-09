@@ -59,7 +59,10 @@ function Clock({ componentHide }) {
           {ampmHours}:{minutes}
         </span>
       )}
-      <div id="clock-option-box">
+      <div
+        id="clock-option-box"
+        className={componentHide.showClock === true ? "" : "invisible"}
+      >
         {optionOpen ? (
           <div className="drop-down fadein">
             <span id="clock-option-span" className="no-shadow">
