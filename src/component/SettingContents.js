@@ -114,20 +114,20 @@ function SettingContents({
   }
   useEffect(() => {
     if (activedNav === 0) {
-      setTopic("General");
-      setDesc("Customize your dashboard");
+      setTopic((prev) => "General");
+      setDesc((prev) => "Customize your dashboard");
     }
     if (activedNav === 1) {
-      setTopic("Todo");
-      setDesc("Break your goals in to manageable pieces");
+      setTopic((prev) => "Todo");
+      setDesc((prev) => "Break your goals in to manageable pieces");
     }
     if (activedNav === 2) {
-      setTopic("Photos");
-      setDesc("Change background of your dashboard");
+      setTopic((prev) => "Photos");
+      setDesc((prev) => "Change background of your dashboard");
     }
     if (activedNav === 3) {
-      setTopic("Quotes");
-      setDesc("Change quote of your dashboard");
+      setTopic((prev) => "Quotes");
+      setDesc((prev) => "Change quote of your dashboard");
     }
   }, [activedNav]);
 

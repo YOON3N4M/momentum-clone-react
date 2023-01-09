@@ -18,10 +18,10 @@ function Clock({ componentHide }) {
       setDate((prev) => new Date());
     }, 1000);
     if (date.getHours() > 12 && date.getHours() < 24) {
-      setAmpmHours(date.getHours() - 12);
-      setAmpm("PM");
+      setAmpmHours((prev) => date.getHours() - 12);
+      setAmpm((prev) => "PM");
     } else {
-      setAmpm("AM");
+      setAmpm((prev) => "AM");
     }
   }, []);
 
@@ -33,6 +33,7 @@ function Clock({ componentHide }) {
     }
   }, [date]);
 
+  console.log(ampmHours);
   return (
     <div
       onMouseOver={() => setDotVisible(true)}
